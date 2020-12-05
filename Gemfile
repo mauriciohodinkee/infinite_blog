@@ -6,6 +6,8 @@ ruby "2.6.6"
 gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "jbuilder", "~> 2.7"
+gem "news-api", "~> 0.2.0"
+gem "ordinare", "~> 0.4.0"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.4"
@@ -13,7 +15,6 @@ gem "sass-rails", ">= 6"
 gem "standard", "~> 0.10.2"
 gem "turbolinks", "~> 5"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "news-api", "~> 0.2.0"
 gem "webpacker", "~> 4.0"
 
 group :development, :test do
