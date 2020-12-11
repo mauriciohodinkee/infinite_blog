@@ -23,6 +23,8 @@ gem "webpacker", "~> 4.0"
 
 group :development, :test do
   gem "brakeman", "~> 4.10"
+  gem "faker", "~> 2.15"
+  gem "factory_bot_rails", "~> 6.1"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "rspec-rails", "~> 4.0"
 end
@@ -45,4 +47,3 @@ group :test do
   gem "shoulda-matchers", "~> 4.4"
   gem "webdrivers"
 end
-
