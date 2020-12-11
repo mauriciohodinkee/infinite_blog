@@ -7,4 +7,14 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:email) }
     it { should validate_presence_of(:password) }
   end
+
+  context "Name of person" do
+    subject { create(:user) }
+
+    context "when first and last name are given" do
+      it "handle user name" do
+        expect(subject.name).to eq("#{subject.first_name} #{subject.last_name}")
+      end
+    end
+  end
 end
