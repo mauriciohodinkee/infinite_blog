@@ -260,6 +260,8 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     shellany (0.0.1)
+    shoulda-matchers (4.4.1)
+      activesupport (>= 4.2.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -335,6 +337,7 @@ DEPENDENCIES
   rspec-rails (~> 4.0)
   sass-rails (>= 6)
   selenium-webdriver
+  shoulda-matchers (~> 4.4)
   spring
   spring-watcher-listen (~> 2.0.0)
   standard (~> 0.10.2)
