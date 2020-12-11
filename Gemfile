@@ -23,6 +23,8 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "webpacker", "~> 4.0"
 
 group :development, :test do
+  gem "better_errors", "~> 2.9"
+  gem "binding_of_caller", "~> 0.8.0"
   gem "brakeman", "~> 4.10"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "factory_bot_rails", "~> 6.1"
