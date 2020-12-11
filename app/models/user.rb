@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_person_name
   validates :first_name, :last_name, presence: true
+
+  has_many :posts, inverse_of: :author, dependent: :destroy, class_name: "Post", foreign_key: :author_id
 end
