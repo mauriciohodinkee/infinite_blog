@@ -6,7 +6,6 @@ ruby "2.6.6"
 gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "bootstrap", "~> 4.5"
-gem "brakeman", "~> 4.10"
 gem "devise", "~> 4.7"
 gem "devise-bootstrapped", "~> 0.1.1"
 gem "jbuilder", "~> 2.7"
@@ -23,11 +22,17 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "webpacker", "~> 4.0"
 
 group :development, :test do
+  gem "brakeman", "~> 4.10"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "rspec-rails", "~> 4.0"
 end
 
 group :development do
+  gem "guard", "~> 2.16"
+  gem "guard-brakeman", "~> 0.8.6"
+  gem "guard-bundler", "~> 3.0"
+  gem "guard-rspec", "~> 4.7"
+  gem "guard-standardrb", "~> 0.2.0"
   gem "listen", "~> 3.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
