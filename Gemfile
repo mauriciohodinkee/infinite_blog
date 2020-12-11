@@ -5,8 +5,12 @@ ruby "2.6.6"
 
 gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", ">= 1.4.2", require: false
+gem "bootstrap", "~> 4.5"
 gem "brakeman", "~> 4.10"
+gem "devise", "~> 4.7"
+gem "devise-bootstrapped", "~> 0.1.1"
 gem "jbuilder", "~> 2.7"
+gem "name_of_person", "~> 1.1"
 gem "news-api", "~> 0.2.0"
 gem "ordinare", "~> 0.4.0"
 gem "pg", ">= 0.18", "< 2.0"
