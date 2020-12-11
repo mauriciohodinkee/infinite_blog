@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a sample blog using Rails, React and NewsAPI.
+## Development
+### Running seeds
 
-Things you may want to cover:
+We are using [seed_migration](https://github.com/harrystech/seed_migration) gem.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`rails seed:migrate`
