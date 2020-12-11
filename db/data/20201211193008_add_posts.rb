@@ -7,7 +7,7 @@ class AddPosts < SeedMigration::Migration
         user.posts.create!(
           title: Faker::Lorem.question(word_count: 3),
           description: Faker::Lorem.sentence,
-          content: Faker::Lorem.paragraph(sentence_count: 2)
+          content: Faker::Lorem.paragraph(sentence_count: 20)
         )
       end
     end
