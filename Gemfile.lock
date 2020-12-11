@@ -263,6 +263,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    seed_migration (1.2.3)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -345,6 +346,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.4)
   rspec-rails (~> 4.0)
   sass-rails (>= 6)
+  seed_migration (~> 1.2)
   selenium-webdriver
   shoulda-matchers (~> 4.4)
   spring

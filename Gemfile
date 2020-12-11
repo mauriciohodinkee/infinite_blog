@@ -16,6 +16,7 @@ gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.4"
 gem "sass-rails", ">= 6"
+gem "seed_migration", "~> 1.2"
 gem "standard", "~> 0.10.2"
 gem "turbolinks", "~> 5"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -23,9 +24,9 @@ gem "webpacker", "~> 4.0"
 
 group :development, :test do
   gem "brakeman", "~> 4.10"
-  gem "faker", "~> 2.15"
-  gem "factory_bot_rails", "~> 6.1"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot_rails", "~> 6.1"
+  gem "faker", "~> 2.15"
   gem "rspec-rails", "~> 4.0"
 end
 
