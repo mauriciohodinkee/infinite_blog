@@ -1,3 +1,5 @@
+![Ruby](https://github.com/mauriciohodinkee/infinite_blog/workflows/Ruby/badge.svg)
+
 # README
 
 This is a sample blog using Rails, React and NewsAPI.
