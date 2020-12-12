@@ -15,12 +15,33 @@ This project is using [Github actions](https://github.com/mauriciohodinkee/infin
 
 ## Development
 
+### Installation
+
+Use `bin/setup` to install this rails application.
+
+### Setup NewsAPI
+
+1. Get a credential on https://newsapi.org/
+2. Run `rails credentials:edit --environment=development` to add a `news_api_key: YOURAPIKEY`
+
+### Running
+
+Install [foreman](https://www.theforeman.org/) and run `foreman start` to see the application running at `https://localhost:5000`
+
 ### Guard
 
 For running tests and linter during development, run:
 
 `bundle exec guard`
-### Running seeds
+
+or run:
+
+1. `bundle exec ordinare` to lint Gemfile
+2. `bundle exec rails standard:fix` to lint ruby code
+3. `bundle exec brakeman` to run static security analysis
+4. `bundle exec rspec` to run tests
+
+### Populating database.
 
 We are using [seed_migration](https://github.com/harrystech/seed_migration) gem.
 
