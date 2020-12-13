@@ -19,7 +19,7 @@ For Ruby:
 For Javascript:
 1. Yarn installation
 2. [ESLint](https://github.com/eslint/eslint) check - javascript code linter
-3. [Jest](https://jestjs.io/) + [Enzyme](https://github.com/enzymejs/enzyme/) tests
+3. [Jest](https://jestjs.io/) tests
 ## Development
 
 ### Installation
