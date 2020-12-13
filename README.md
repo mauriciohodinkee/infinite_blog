@@ -1,4 +1,5 @@
 ![Ruby](https://github.com/mauriciohodinkee/infinite_blog/workflows/Ruby/badge.svg)
+![Javascript](https://github.com/mauriciohodinkee/infinite_blog/workflows/Javascript/badge.svg)
 
 # README
 
