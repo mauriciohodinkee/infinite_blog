@@ -6,7 +6,9 @@
 This is a sample blog using Rails, React and NewsAPI.
 ## Continuous integration
 
-This project is using [Github actions](https://github.com/mauriciohodinkee/infinite_blog/actions) and performing:
+This project is using [Github actions](https://github.com/mauriciohodinkee/infinite_blog/actions).
+
+For Ruby:
 1. Postgres installation
 2. Ruby and rails installation
 3. [Ordinare](https://github.com/nikolalsvk/ordinare) check - Gemfile organizer
@@ -14,6 +16,10 @@ This project is using [Github actions](https://github.com/mauriciohodinkee/infin
 5. [Brakeman] (https://github.com/presidentbeef/brakeman) - ruby static security analysis
 6. [Rspec] (https://github.com/rspec/rspec) - behavior driven development for ruby
 
+For Javascript:
+1. Yarn installation
+2. [ESLint](https://github.com/eslint/eslint) check - javascript code linter
+3. [Jest](https://jestjs.io/) + [Enzyme](https://github.com/enzymejs/enzyme/) tests
 ## Development
 
 ### Installation
@@ -27,7 +33,7 @@ Use `bin/setup` to install this rails application.
 
 ### Running
 
-Install [foreman](https://www.theforeman.org/) and run `foreman start` to see the application running at `https://localhost:5000`
+Install [foreman](https://www.theforeman.org/) and run `foreman start` to see the application running at `https://localhost:5000`. This command runs rails server and webpack-dev-server in parallel.
 
 ### Guard
 
