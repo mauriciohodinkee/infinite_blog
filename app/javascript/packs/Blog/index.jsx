@@ -1,14 +1,22 @@
-import React from 'react';
+import * as React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
+
 import PropTypes from 'prop-types';
 
 const Blog = (props) => {
   const { title } = props;
   return (
-    <div>
-      Blog
-      {title}
-      !
-    </div>
+    <>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <main>
+          Blog
+          {title}
+          !
+        </main>
+      </Container>
+    </>
   );
 };
 
