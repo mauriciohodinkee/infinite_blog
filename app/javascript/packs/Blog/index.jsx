@@ -21,26 +21,34 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sections = [
-  { title: 'Local posts', url: '#' },
-  { title: 'Remote posts', url: '#' },
+  { title: 'Local posts', postType: 'local' },
+  { title: 'Remote posts', postType: 'remote' },
 ];
 
 const Blog = (props) => {
-  const { title, type } = props;
-  const mainTitle = `${type} posts`;
+  const { title } = props;
 
   const [errors, setErrors] = useState();
   const [posts, setPosts] = useState([]);
+  const [postType, setPostType] = useState('local');
+  const mainTitle = `${postType} posts`;
 
-  const fetchPosts = async () => {
-    await getLocalPosts()
+  const fetchPosts = async (type) => {
+    let fetcher = () => undefined;
+    if (type === 'local') {
+      fetcher = getLocalPosts;
+    } else if (type === 'remote') {
+      fetcher = getRemotePosts;
+    }
+
+    await fetcher()
       .then((res) => setPosts(res.data))
       .catch((error) => setErrors(error.response.data.messages));
   };
 
   useEffect(() => {
-    fetchPosts();
-  }, []);
+    fetchPosts(postType);
+  }, [postType]);
 
   const classes = useStyles();
 
@@ -48,7 +56,7 @@ const Blog = (props) => {
     <>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title={title} sections={sections} />
+        <Header title={title} sections={sections} setPostType={setPostType} />
         <main>
           <Grid container spacing={5} className={classes.mainGrid}>
             <Main title={mainTitle} posts={posts} />
@@ -64,12 +72,10 @@ const Blog = (props) => {
 
 Blog.defaultProps = {
   title: 'Infinite Scrolling',
-  type: 'Local',
 };
 
 Blog.propTypes = {
   title: PropTypes.string,
-  type: PropTypes.string,
 };
 
 export default Blog;
