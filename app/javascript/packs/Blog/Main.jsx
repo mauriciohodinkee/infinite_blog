@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 function Main(props) {
   const classes = useStyles();
   const { posts, title } = props;
-  const formatToMarkdown = (post) => (`# ${post.id} ${post.title}
+  const formatToMarkdown = (post) => (`# ${post.title}
 
   ${post.content}`);
 
