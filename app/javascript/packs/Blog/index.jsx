@@ -12,7 +12,7 @@ import Main from './Main';
 
 import PostService from '../services/post';
 
-const { getLocalPosts } = PostService;
+const { getLocalPosts, getRemotePosts } = PostService;
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
