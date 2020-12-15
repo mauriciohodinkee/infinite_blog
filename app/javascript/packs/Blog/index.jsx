@@ -34,7 +34,7 @@ const Blog = (props) => {
 
   const fetchPosts = async () => {
     await getLocalPosts()
-      .then((res) => setPosts(res.data))
+      .then((res) => setPosts(res))
       .catch((error) => setErrors(error.response.data.messages));
   };
 
