@@ -29,22 +29,18 @@ const Blog = (props) => {
   const { title, type } = props;
   const mainTitle = `${type} posts`;
 
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState();
   const [posts, setPosts] = useState([]);
 
   const fetchPosts = async () => {
     await getLocalPosts()
-      .then((res) => setPosts(res))
+      .then((res) => setPosts(res.data))
       .catch((error) => setErrors(error.response.data.messages));
   };
 
   useEffect(() => {
     fetchPosts();
-  });
-
-  if (errors) {
-    console.log(errors); // eslint-disable-line no-console
-  }
+  }, []);
 
   const classes = useStyles();
 
