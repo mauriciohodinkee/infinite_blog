@@ -26,10 +26,14 @@ For Javascript:
 
 Use `bin/setup` to install this rails application.
 
-### Setup NewsAPI
+### Setup NewsAPI and local API
 
+NewsAPI:
 1. Get a credential on https://newsapi.org/
 2. Run `rails credentials:edit --environment=development` to add a `news_api_key: YOURAPIKEY`
+
+Local API:
+1. Copy `.env.example` to `.env`
 
 ### Running
 
