@@ -26,8 +26,8 @@ function Main(props) {
         {title}
       </Typography>
       <Divider />
-      {posts.map((post) => (
-        <Markdown className={classes.markdown} key={post.id}>
+      {posts.map((post, index) => (
+        <Markdown className={classes.markdown} key={index}>
           { formatToMarkdown(post) }
         </Markdown>
       ))}
