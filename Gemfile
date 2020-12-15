@@ -8,6 +8,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "bootstrap", "~> 4.5"
 gem "devise", "~> 4.7"
 gem "devise-bootstrapped", "~> 0.1.1"
+gem "dotenv-rails", "~> 2.7"
 gem "jbuilder", "~> 2.7"
 gem "kaminari", "~> 1.2"
 gem "name_of_person", "~> 1.1"
