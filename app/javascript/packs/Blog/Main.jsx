@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -12,17 +12,39 @@ const useStyles = makeStyles((theme) => ({
     ...theme.typography.body2,
     padding: theme.spacing(3, 0),
   },
-  toolbar: {
-    borderBottom: `1px solid ${theme.palette.divider}`,
+  mainLink: {
+    padding: theme.spacing(1),
+    flexShrink: 0,
   },
 }));
 
 function Main(props) {
+  const loader = useRef(null);
   const classes = useStyles();
   const { posts, title, currentPage, setPage } = props;
   const formatToMarkdown = (post) => (`# ${post.title}
 
   ${post.content}`);
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleObserver, observerOptions);
+    if (loader.current) {
+      observer.observe(loader.current);
+    }
+  }, []);
+
+  const handleObserver = (entities) => {
+    const target = entities[0];
+    if (target.isIntersecting) {
+      setPage((currentPage) => currentPage + 1)
+    }
+  }
 
   return (
     <Grid item xs={12} md={12}>
@@ -35,13 +57,14 @@ function Main(props) {
           { formatToMarkdown(post)}
         </Markdown>
       ))}
+
       <Button
         color="inherit"
         key={1}
-        className={classes.toolbarLink}
-        onClick={() => setPage(() => currentPage + 1)}
+        className={classes.mainLink}
+        ref={loader}
       >
-        Next
+        Load More
       </Button>
 
     </Grid>
