@@ -34,19 +34,19 @@ function Main(props) {
     threshold: 1.0,
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleObserver, observerOptions);
-    if (loader.current) {
-      observer.observe(loader.current);
-    }
-  }, []);
-
   const handleObserver = (entities) => {
     const target = entities[0];
     if (target.isIntersecting) {
       setPage((page) => page + 1);
     }
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleObserver, observerOptions);
+    if (loader.current) {
+      observer.observe(loader.current);
+    }
+  }, []);
 
   return (
     <Grid item xs={12} md={12}>
