@@ -9,6 +9,7 @@ gem "bootstrap", "~> 4.5"
 gem "devise", "~> 4.7"
 gem "devise-bootstrapped", "~> 0.1.1"
 gem "dotenv-rails", "~> 2.7"
+gem "faker", "~> 2.15"
 gem "jbuilder", "~> 2.7"
 gem "kaminari", "~> 1.2"
 gem "name_of_person", "~> 1.1"
@@ -30,7 +31,6 @@ group :development, :test do
   gem "brakeman", "~> 4.10"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "factory_bot_rails", "~> 6.1"
-  gem "faker", "~> 2.15"
   gem "rspec-rails", "~> 4.0"
 end
 
