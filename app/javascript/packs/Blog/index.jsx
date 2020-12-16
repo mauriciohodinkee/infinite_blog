@@ -37,11 +37,11 @@ const Blog = (props) => {
   const [postType, setPostType] = useState('local');
   const mainTitle = `${postType} posts`;
 
-  const fetchPosts = async (type, page) => {
+  const fetchPosts = async () => {
     let fetcher = () => undefined;
-    if (type === 'local') {
+    if (postType === 'local') {
       fetcher = getLocalPosts;
-    } else if (type === 'remote') {
+    } else if (postType === 'remote') {
       fetcher = getRemotePosts;
     }
 
@@ -56,7 +56,7 @@ const Blog = (props) => {
   }, [postType]);
 
   useEffect(() => {
-    fetchPosts(postType, page);
+    fetchPosts();
   }, [postType, page]);
 
   const classes = useStyles();
