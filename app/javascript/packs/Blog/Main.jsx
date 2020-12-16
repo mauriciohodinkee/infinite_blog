@@ -21,15 +21,17 @@ const useStyles = makeStyles((theme) => ({
 function Main(props) {
   const loader = useRef(null);
   const classes = useStyles();
-  const { posts, title, currentPage, setPage } = props;
+  const {
+    posts, title, currentPage, setPage,
+  } = props;
   const formatToMarkdown = (post) => (`# ${post.title}
 
   ${post.content}`);
 
   const observerOptions = {
     root: null,
-    rootMargin: "0px",
-    threshold: 1.0
+    rootMargin: '0px',
+    threshold: 1.0,
   };
 
   useEffect(() => {
@@ -42,9 +44,9 @@ function Main(props) {
   const handleObserver = (entities) => {
     const target = entities[0];
     if (target.isIntersecting) {
-      setPage((currentPage) => currentPage + 1)
+      setPage((currentPage) => currentPage + 1);
     }
-  }
+  };
 
   return (
     <Grid item xs={12} md={12}>
