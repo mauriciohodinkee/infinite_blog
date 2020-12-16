@@ -59,3 +59,7 @@ or run:
 We are using [seed_migration](https://github.com/harrystech/seed_migration) gem.
 
 `rails seed:migrate`
+
+## Production
+
+Sign in with `admin.user@example.com` / `password`
