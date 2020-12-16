@@ -22,7 +22,7 @@ function Main(props) {
   const loader = useRef(null);
   const classes = useStyles();
   const {
-    posts, title, currentPage, setPage,
+    posts, title, setPage,
   } = props;
   const formatToMarkdown = (post) => (`# ${post.title}
 
@@ -44,7 +44,7 @@ function Main(props) {
   const handleObserver = (entities) => {
     const target = entities[0];
     if (target.isIntersecting) {
-      setPage((currentPage) => currentPage + 1);
+      setPage((page) => page + 1);
     }
   };
 
@@ -76,7 +76,6 @@ function Main(props) {
 Main.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.object).isRequired,
   title: PropTypes.string.isRequired,
-  currentPage: PropTypes.number.isRequired,
   setPage: PropTypes.func.isRequired,
 };
 

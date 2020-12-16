@@ -69,7 +69,7 @@ const Blog = (props) => {
         <main>
           <Grid container spacing={5} className={classes.mainGrid}>
             <Paper className={classes.paper}>{errors}</Paper>
-            <Main title={mainTitle} posts={posts} currentPage={page} setPage={setPage} />
+            <Main title={mainTitle} posts={posts} setPage={setPage} />
           </Grid>
         </main>
       </Container>
