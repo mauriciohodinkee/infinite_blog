@@ -30,10 +30,11 @@ const Blog = (props) => {
 
   const [errors, setErrors] = useState();
   const [posts, setPosts] = useState([]);
+  const [page, setPage] = useState(1);
   const [postType, setPostType] = useState('local');
   const mainTitle = `${postType} posts`;
 
-  const fetchPosts = async (type) => {
+  const fetchPosts = async (type, page) => {
     let fetcher = () => undefined;
     if (type === 'local') {
       fetcher = getLocalPosts;
@@ -41,14 +42,19 @@ const Blog = (props) => {
       fetcher = getRemotePosts;
     }
 
-    await fetcher()
-      .then((res) => setPosts(res.data))
+    await fetcher(page)
+      .then((res) => setPosts(() => posts.concat(res.data)))
       .catch((error) => setErrors(error.response.data.messages));
   };
 
   useEffect(() => {
-    fetchPosts(postType);
+    setPage(() => 1);
+    setPosts(() => []);
   }, [postType]);
+
+  useEffect(() => {
+    fetchPosts(postType, page);
+  }, [postType, page]);
 
   const classes = useStyles();
 
@@ -59,7 +65,7 @@ const Blog = (props) => {
         <Header title={title} sections={sections} setPostType={setPostType} />
         <main>
           <Grid container spacing={5} className={classes.mainGrid}>
-            <Main title={mainTitle} posts={posts} />
+            <Main title={mainTitle} posts={posts} currentPage={page} setPage={setPage} />
           </Grid>
         </main>
       </Container>
