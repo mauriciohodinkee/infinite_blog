@@ -10,6 +10,7 @@ const styles = (theme) => ({
   },
 });
 
+/* eslint-disable react/jsx-props-no-spreading */
 const options = {
   overrides: {
     h1: {
@@ -57,3 +58,4 @@ const options = {
 export default function Markdown(props) {
   return <ReactMarkdown options={options} {...props} />;
 }
+/* eslint-enable react/jsx-props-no-spreading */
