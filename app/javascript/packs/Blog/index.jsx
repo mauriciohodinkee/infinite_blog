@@ -68,7 +68,7 @@ const Blog = (props) => {
         <Header title={title} sections={sections} setPostType={setPostType} />
         <main>
           <Grid container spacing={5} className={classes.mainGrid}>
-            <Paper className={classes.paper}>{errors}</Paper>
+            {errors && <Paper className={classes.paper}>{errors}</Paper>}
             <Main title={mainTitle} posts={posts} setPage={setPage} />
           </Grid>
         </main>
