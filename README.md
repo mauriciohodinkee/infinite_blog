@@ -3,7 +3,8 @@
 
 # README
 
-This is a sample blog using Rails, React and NewsAPI.
+This is a sample blog using Rails, React and NewsAPI. This application is deployed to https://infinite-blog.herokuapp.com/
+
 ## Continuous integration
 
 This project is using [Github actions](https://github.com/mauriciohodinkee/infinite_blog/actions).
@@ -20,6 +21,7 @@ For Javascript:
 1. Yarn installation
 2. [ESLint](https://github.com/eslint/eslint) check - javascript code linter
 3. [Jest](https://jestjs.io/) tests
+
 ## Development
 
 ### Installation
