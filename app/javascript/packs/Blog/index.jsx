@@ -51,7 +51,7 @@ const Blog = (props) => {
   };
 
   useEffect(() => {
-    setPage(() => 1);
+    setPage(() => 0);
     setPosts(() => []);
   }, [postType]);
 
