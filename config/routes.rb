@@ -8,4 +8,7 @@ Rails.application.routes.draw do
       resources :remote_posts, only: %w[index]
     end
   end
+
+  get "/blog", to: "blog#index"
+  root to: "blog#index"
 end
