@@ -39,6 +39,9 @@ function Header(props) {
         >
           {title}
         </Typography>
+        <Button href="/admin" variant="outlined" size="small">
+          Sign in
+        </Button>
       </Toolbar>
       <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
         {sections.map((section) => (
