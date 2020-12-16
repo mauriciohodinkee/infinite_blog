@@ -4,6 +4,11 @@ import { render, unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import Blog from 'Blog';
 
+const intersectionObserverMock = () => ({
+  observe: () => null
+})
+window.IntersectionObserver = jest.fn().mockImplementation(intersectionObserverMock);
+
 let container = null;
 beforeEach(() => {
   // setup a DOM element as a render target
