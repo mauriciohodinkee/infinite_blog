@@ -4,8 +4,12 @@ class NewsApi::Article
   def self.get(params)
     default_params = {language: "en", sortBy: "relevancy"}
 
-    NewsApi::Request.get(params.merge(default_params)).each do |article|
-      article.id = SecureRandom.uuid
+    begin
+      NewsApi::Request.get(params.merge(default_params)).each do |article|
+        article.id = SecureRandom.uuid
+      end
+    rescue TooManyRequestsException
+      []
     end
   end
 end
