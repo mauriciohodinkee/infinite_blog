@@ -22,6 +22,7 @@ gem "rack-cors", "~> 1.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.4"
 gem "sass-rails", ">= 6"
 gem "seed_migration", "~> 1.2"
+gem "sidekiq", "~> 6.1"
 gem "standard", "~> 0.10.2"
 gem "turbolinks", "~> 5"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
