@@ -8,4 +8,10 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
 
   has_many :posts, inverse_of: :author, dependent: :destroy, class_name: "Post", foreign_key: :author_id
+
+  scope :admin, -> { where(admin: true) }
+
+  def self.importer
+    admin.first
+  end
 end
