@@ -7,7 +7,8 @@ class User < ApplicationRecord
   has_person_name
   validates :first_name, :last_name, presence: true
 
-  has_many :posts, inverse_of: :author, dependent: :destroy, class_name: "Post", foreign_key: :author_id
+  has_many :local_posts, inverse_of: :author, dependent: :destroy, class_name: "LocalPost", foreign_key: :author_id
+  has_many :remote_posts, inverse_of: :author, dependent: :destroy, class_name: "RemotePost", foreign_key: :author_id
 
   scope :admin, -> { where(admin: true) }
 

@@ -1,0 +1,2 @@
+class LocalPost < Post
+end

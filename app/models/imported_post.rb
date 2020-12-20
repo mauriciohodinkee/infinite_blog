@@ -1,0 +1,2 @@
+class ImportedPost < Post
+end
