@@ -12,7 +12,24 @@ class PostDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     description: Field::Text,
-    content: Field::Text,
+    content: Field::SimpleMarkdown.with_options({
+      safe_links_only: true,
+      filter_html: true,
+      with_toc_data: true,
+      hard_wrap: true,
+      link_attributes: { rel: 'follow' },
+      autolink: true,
+      tables: true,
+      no_intra_emphasis: true,
+      strikethrough: true,
+      highlight: true,
+      space_after_headers: true,
+      easymde_options: {
+        placeholder: 'Type here...',
+        spell_checker: false,
+        hide_icons: %w[guide heading]
+      }
+    }),
     author_id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime

@@ -69,6 +69,11 @@ GEM
       momentjs-rails (~> 2.8)
       sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
+    administrate-field-simple_markdown (0.6.0)
+      administrate (< 1.0.0)
+      rack (~> 2.0, >= 2.0.8)
+      rails (>= 4.2, < 7)
+      redcarpet (~> 3.3)
     ast (2.4.1)
     autoprefixer-rails (10.1.0.0)
       execjs
@@ -255,6 +260,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redcarpet (3.5.1)
     regexp_parser (1.8.2)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -367,6 +373,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate (~> 0.14.0)
+  administrate-field-simple_markdown (~> 0.6.0)
   bcrypt (~> 3.1.7)
   better_errors (~> 2.9)
   binding_of_caller (~> 0.8.0)
